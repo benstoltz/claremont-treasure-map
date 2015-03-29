@@ -1,0 +1,1 @@
+!function(t,a,e,o){"use strict";e.Icon.Default.imagePath="images/";var n=e.map("map",{center:[34.11,-117.7197],zoom:15});new e.tileLayer("http://{s}.tile.stamen.com/watercolor/{z}/{x}/{y}.png",{minZoom:0,maxZoom:18,attribution:'Map data © <a href="http://www.openstreetmap.org">OpenStreetMap contributors</a>'}).addTo(n)}(window,document,L);
