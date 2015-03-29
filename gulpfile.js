@@ -4,6 +4,7 @@
 var gulp = require('gulp');
 var open = require('open');
 var wiredep = require('wiredep').stream;
+var ghPages = require('gulp-gh-pages');
 
 // Load plugins
 var $ = require('gulp-load-plugins')();
@@ -120,4 +121,9 @@ gulp.task('watch', ['connect', 'serve'], function () {
 
     // Watch bower files
     gulp.watch('bower.json', ['wiredep']);
+});
+
+gulp.task('deploy', function() {
+  return gulp.src('./dist/**/*')
+    .pipe(ghPages());
 });
