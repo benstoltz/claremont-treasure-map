@@ -2,8 +2,7 @@
   "name": "claremont-treasure-map",
   "version": "0.0.0",
   "dependencies": {
-  	
-  		
+    "leaflet-ajax": "~1.1.0",
+    "Leaflet.MakiMarkers": "~1.0.1"
   }
 }
-

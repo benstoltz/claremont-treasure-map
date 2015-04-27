@@ -53,13 +53,21 @@ gulp.task('images', function () {
         .pipe($.size());
 });
 
+// GeoJSON data
+gulp.task('data', function () {
+    return gulp.src([
+            'app/data/**/*'])
+        .pipe(gulp.dest('dist/data'))
+        .pipe($.size());
+});
+
 // Clean
 gulp.task('clean', function () {
     return gulp.src(['dist/styles', 'dist/scripts', 'dist/images'], { read: false }).pipe($.clean());
 });
 
 // Build
-gulp.task('build', ['html', 'images']);
+gulp.task('build', ['html', 'images', 'data']);
 
 // Default task
 gulp.task('default', ['clean'], function () {
@@ -77,7 +85,7 @@ gulp.task('connect', function(){
 
 // Open
 gulp.task('serve', ['connect'], function() {
-  open("http://localhost:9000");
+  open('http://localhost:9000');
 });
 
 // Inject Bower components
@@ -92,7 +100,7 @@ gulp.task('wiredep', function () {
     gulp.src('app/*.html')
         .pipe(wiredep({
             directory: 'app/bower_components',
-            ignorePath: 'app/'
+            ignorePath: 'app/bower_components'
         }))
         .pipe(gulp.dest('app'));
 });
